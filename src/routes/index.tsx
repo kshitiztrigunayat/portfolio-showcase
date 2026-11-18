@@ -343,11 +343,11 @@ function Capabilities() {
               className="grid gap-3 border-t border-border py-6 md:grid-cols-12 md:gap-10"
             >
               <p className="font-mono-label pt-2 text-accent md:col-span-3">{g.label}</p>
-              <p className="font-display text-2xl leading-snug md:col-span-9 md:text-3xl">
+              <p className="font-display flex flex-wrap items-center gap-y-1 text-2xl leading-snug md:col-span-9 md:text-3xl">
                 {g.items.map((item, i) => (
-                  <span key={item}>
+                  <span key={item} className="mr-4 whitespace-nowrap md:mr-0">
                     {item}
-                    {i < g.items.length - 1 && <span className="mx-3 text-rule">·</span>}
+                    {i < g.items.length - 1 && <span className="mx-3 hidden text-rule md:inline">·</span>}
                   </span>
                 ))}
               </p>
@@ -355,11 +355,11 @@ function Capabilities() {
           ))}
           <li className="grid gap-3 border-y border-border py-6 md:grid-cols-12 md:gap-10">
             <p className="font-mono-label pt-1 text-accent md:col-span-3">How I work</p>
-            <p className="font-mono-label leading-loose text-secondary md:col-span-9">
+            <p className="font-mono-label flex flex-wrap items-center gap-y-2 whitespace-normal leading-loose text-secondary md:col-span-9">
               {LOOP.map((step, i) => (
-                <span key={step}>
+                <span key={step} className="whitespace-nowrap">
                   <span className="text-primary">{step}</span>
-                  {i < LOOP.length - 1 && <span className="mx-3 text-rule">→</span>}
+                  {i < LOOP.length - 1 && <span className="mx-2 text-rule md:mx-3">→</span>}
                 </span>
               ))}
             </p>

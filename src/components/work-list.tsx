@@ -72,13 +72,14 @@ export function WorkList({ projects }: { projects: Project[] }) {
                   setHovering(true);
                 }}
                 onFocus={() => setActive(i)}
-                className="group grid grid-cols-[2.25rem_1fr_auto] items-baseline gap-3 border-t border-border py-5 transition-opacity duration-500 md:py-6"
+                className="group grid grid-cols-[1.75rem_1fr] items-baseline gap-3 md:grid-cols-[2.25rem_1fr_auto] border-t border-border py-5 transition-opacity duration-500 md:py-6"
                 style={{ opacity: hovering && current && current.slug !== p.slug ? 0.38 : 1 }}
               >
                 <span className="font-mono-label text-secondary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span>
+                  <span className="font-mono-label mb-2 block text-secondary md:hidden">{p.year}</span>
                   <span className="block text-3xl leading-[1.05] transition-transform duration-500 group-hover:translate-x-2 md:text-5xl">
                     {p.title.split(" — ")[0]}
                   </span>
@@ -87,7 +88,7 @@ export function WorkList({ projects }: { projects: Project[] }) {
                     {p.metric}
                   </span>
                 </span>
-                <span className="font-mono-label text-secondary">{p.year}</span>
+                <span className="font-mono-label hidden text-secondary md:block">{p.year}</span>
               </Link>
             </li>
           ))}
